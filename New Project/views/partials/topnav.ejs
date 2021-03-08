@@ -1,0 +1,30 @@
+<header>
+    <a href="main.html" class="logo"><img src="images/utility/logo.jpeg"></a>
+    <ul>
+        <li class="logged-in"><a href="cart.html"><i class="fa fa-shopping-basket"></i>Cart</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="logged-out"><a href="account.html">Accounts</a></li>
+        <li class="logged-in"><a href="#" id="logout">Logout</a></li>
+        <li><i class="fa fa-bars" id="menu-btn" onclick="openmenu()"></i></li>
+        <li><i class="fa fa-times" id="close-btn" onclick="closemenu()"></i></li>
+    </ul>
+</header>
+<section class="banner">
+<script type="text/javascript">
+    window.addEventListener("scroll", function(){
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+    })
+</script>
+
+	<!-- logout button -->
+	<script>
+		$("#logout").click(function(){
+        firebase.auth().signOut().then(function() {
+        	loggedOut();
+      		}).catch(function(error) {
+        	// An error happened.
+      		});
+		});
+	</script>
+    </section>
