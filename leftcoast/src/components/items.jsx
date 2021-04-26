@@ -6,7 +6,6 @@ import ListGroup from './common/listGroup';
 import { getGenres } from '../services/genres';
 import ItemsTable from './itemsTable';
 import _ from 'lodash';
-import NavBar from "./navbar";
 
 class Items extends Component {
     state = { 
@@ -59,7 +58,7 @@ class Items extends Component {
         if (count === 0) return <p>No Items In Cart</p>;
 
         const {totalCount, data: items} = this.getPageData();
-        return (
+        return ( 
             <React.Fragment>
                 <div className="row ">
                     <div className="col-2">

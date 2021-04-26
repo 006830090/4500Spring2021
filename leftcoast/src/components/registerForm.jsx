@@ -4,22 +4,26 @@ import Form from "./common/form";
 
 class RegisterForm extends Form {
   state = {
-    data: { username: "", password: "", name: "" },
+    data: { email: "", password: "", name: "", phone: "" },
     errors: {}
   };
 
   schema = {
-    username: Joi.string()
+    email: Joi.string()
       .required()
       .email()
-      .label("Username"),
+      .label("Email"),
     password: Joi.string()
       .required()
       .min(5)
       .label("Password"),
     name: Joi.string()
       .required()
-      .label("Name")
+      .label("Name"),
+    phone: Joi.string()
+      .required()
+      .min(10)
+      .label("Phone")
   };
 
   doSubmit = () => {
@@ -32,9 +36,10 @@ class RegisterForm extends Form {
       <div>
         <h1>Register</h1>
         <form onSubmit={this.handleSubmit}>
-          {this.renderInput("username", "Username")}
+          {this.renderInput("email", "Email")}
           {this.renderInput("password", "Password", "password")}
-          {this.renderInput("name", "Name")}
+          {this.renderInput("name", "Company Name")}
+          {this.renderInput("phone", "Phone Number")}
           {this.renderButton("Register")}
         </form>
       </div>

@@ -4,10 +4,9 @@ import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     return(
-      <nav className="navbar navbar-expand-lg navbar-light  topNav">
-        
+      <nav className="navbar navbar-expand-lg navbar-light topNav">    
         <div className="container-fluid">
-          <Link className="navbar-brand" to="#">
+          <Link className="navbar-brand" to="/home">
             <img src={logoURL} 
               width="60" height="40" to="/" class="d-inline-block align-text-top">
             </img>
@@ -43,14 +42,11 @@ const NavBar = () => {
                   Accounts
                 </NavLink>
 
-                <NavLink className="nav-link" to="/login">
-                  Log In
+                <NavLink className="nav-link" to="/categories">
+                  Categories
                 </NavLink>
 
 
-                <NavLink className="nav-link" to="/register">
-                  Register
-                </NavLink>
               
               </div>
             </div>

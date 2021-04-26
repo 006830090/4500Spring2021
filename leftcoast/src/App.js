@@ -9,15 +9,24 @@ import Contact from './components/contact';
 import Accounts from './components/accounts';
 import NotFound from './components/notFound';
 import NavBar from './components/navbar';
+import Footer from './components/footer';
+import Home from './components/home';
+import Categories from './components/categories';
+import CategoryForm from './components/categoryForm';
+
 import './App.css';
 
 class App extends Component {
   render() { 
     return ( 
       <React.Fragment>
-        <NavBar />
-        <main className="container">
+        
+       <NavBar />
+        <main>
           <Switch> 
+            <Route path="/home" component={Home}></Route>
+            <Route path="/categories" component={Categories}></Route>
+            <Route path="/categories/:id" component={CategoryForm}></Route>
             <Route path="/login" component={LoginForm}></Route>
             <Route path="/register" component={RegisterForm}></Route>
             <Route path="/items/:id" component={ItemForm}></Route>
@@ -26,10 +35,11 @@ class App extends Component {
             <Route path="/contact" component={Contact}></Route>
             <Route path="/accounts" component={Accounts}></Route>
             <Route path="/notFound" component={NotFound}></Route>
-            <Redirect from="/" exact to="/items" />
+            <Redirect from="/" exact to="/home" />
             <Redirect to="/notFound" />
           </Switch>
         </main>
+        <Footer />
       </React.Fragment>
      );
   }

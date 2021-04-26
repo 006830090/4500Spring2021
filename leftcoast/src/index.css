@@ -17,11 +17,19 @@ html, body {
   width: 100%;
   background-color: red;
   margin-bottom: 10px;
+  z-index: 10000;
 }
 
 .topNav img{
   margin-right: 20px;
 }
+
+.footer
+{
+  z-index: 10000;
+}
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
