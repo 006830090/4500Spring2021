@@ -12,7 +12,7 @@ import NavBar from './components/navbar';
 import Footer from './components/footer';
 import Home from './components/home';
 import Categories from './components/categories';
-import CategoryForm from './components/categoryForm';
+import DisplayItem from './components/common/displayItem';
 
 import './App.css';
 
@@ -25,8 +25,8 @@ class App extends Component {
         <main>
           <Switch> 
             <Route path="/home" component={Home}></Route>
-            <Route path="/categories" component={Categories}></Route>
-            <Route path="/categories/:id" component={CategoryForm}></Route>
+            <Route path="/categories" exact component={Categories}></Route>
+            <Route path="/categories/:id" component={DisplayItem}></Route>
             <Route path="/login" component={LoginForm}></Route>
             <Route path="/register" component={RegisterForm}></Route>
             <Route path="/items/:id" component={ItemForm}></Route>

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: "Varela Round";
 }
 
 .App-logo {
@@ -39,3 +40,8 @@
   }
 }
 
+.dFlex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
