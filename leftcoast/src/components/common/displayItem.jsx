@@ -1,6 +1,7 @@
 import React from 'react';
 import { getItem } from '../../services/itemService';
 import '../style/itemPage.css';
+import { Carousel } from 'rsuite';
 
 
 
@@ -13,8 +14,16 @@ const DisplayItem = ( { match, history }) => {
             <div className="container">
                 <div className="row">
                     
-                    <div className="col-md-5 dispImage">
-                        <img src={item.images}/>
+                    <div className="col-md-5 dispImage container">
+                    <Carousel autoplay navButtonsAlwaysInvisible={true} className="custom-slider">
+                        <img
+                        src={item.images}
+                        />
+                        <img
+                        src="https://via.placeholder.com/600x250/8f8e94/FFFFFF?text=2"
+                        
+                        />
+                    </Carousel>
                     </div>
 
                     <div className="col-md-7">
